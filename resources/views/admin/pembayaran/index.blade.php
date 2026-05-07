@@ -52,8 +52,7 @@
     .badge-blue  { background:#eff6ff; border:1px solid #bfdbfe; color:#2563eb; }
     .table-th { padding:1rem 1.5rem; font-weight:900; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; text-align:left; }
     .table-td { padding:1rem 1.5rem; font-size:0.875rem; }
-
-    /* Animate fade in */
+    
     @keyframes fadeSlideIn {
         from { opacity: 0; transform: translateY(8px); }
         to   { opacity: 1; transform: translateY(0); }

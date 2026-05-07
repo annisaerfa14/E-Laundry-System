@@ -14,11 +14,9 @@ class TransaksiController extends Controller
         {
             $pelanggans = \App\Models\Pelanggan::all();
             $pakets = \App\Models\Paket::all();
-
             $latest = \App\Models\Transaksi::latest()->first();
             $number = $latest ? $latest->id + 1 : 1;
             $nextInv = 'INV-' . str_pad($number, 3, '0', STR_PAD_LEFT);
-
             $query = \App\Models\Transaksi::with(['pelanggan', 'paket'])->latest();
 
             if (request('tanggal_dari')) {
@@ -27,13 +25,11 @@ class TransaksiController extends Controller
             if (request('tanggal_sampai')) {
                 $query->whereDate('tanggal_selesai', '<=', request('tanggal_sampai'));
             }
-
             $status = $request->input('status_pembayaran', 'Belum Lunas');
             
             if ($status !== 'Semua') {
                 $query->where('status_pembayaran', $status);
             }
-
            $transaksis = $query->paginate(3);
 
             return view('admin.transaksi.index', compact('pelanggans', 'pakets', 'nextInv', 'transaksis'));
