@@ -3,7 +3,6 @@
 @section('title', 'Dashboard')
 
 @section('content')
-{{-- ===== PAGE HEADER ===== --}}
 <div class="flex justify-between items-center mb-8">
     <div>
         <h1 class="text-2xl font-black text-gray-800">Ringkasan Hari Ini</h1>
@@ -42,7 +41,7 @@
             </div>
         </div>
     </div>
-</div>  {{-- ← penutup flex justify-between --}}
+</div> 
 
     <div class="grid grid-cols-3 gap-8">
         

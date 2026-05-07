@@ -12,19 +12,15 @@ class TransaksiController extends Controller
 {
     public function index(Request $request)
         {
-            // Mengambil data pelanggan dan paket untuk pilihan select
             $pelanggans = \App\Models\Pelanggan::all();
             $pakets = \App\Models\Paket::all();
 
-            // Mengambil nomor invoice berikutnya
             $latest = \App\Models\Transaksi::latest()->first();
             $number = $latest ? $latest->id + 1 : 1;
             $nextInv = 'INV-' . str_pad($number, 3, '0', STR_PAD_LEFT);
 
-            // Mengambil riwayat transaksi (dibatasi 10 dengan fitur filter atau belum lunas default)
             $query = \App\Models\Transaksi::with(['pelanggan', 'paket'])->latest();
 
-            // Filter tanggal
             if (request('tanggal_dari')) {
                 $query->whereDate('tanggal_selesai', '>=', request('tanggal_dari'));
             }
@@ -32,7 +28,6 @@ class TransaksiController extends Controller
                 $query->whereDate('tanggal_selesai', '<=', request('tanggal_sampai'));
             }
 
-            // Jika ada permintaan filter, gunakan itu. Jika tidak defaultnya 'Belum Lunas'
             $status = $request->input('status_pembayaran', 'Belum Lunas');
             
             if ($status !== 'Semua') {
@@ -64,7 +59,7 @@ class TransaksiController extends Controller
             'berat' => $request->berat,
             'total_harga' => $total_harga,
             'tanggal_masuk' => $tanggal_masuk,
-            'tanggal_selesai' => $tanggal_selesai, // Menyimpan input manual
+            'tanggal_selesai' => $tanggal_selesai, 
             'status_pembayaran' => 'Belum Lunas',
             'status_cucian' => 'Dalam Proses',
         ]);

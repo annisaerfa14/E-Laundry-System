@@ -61,7 +61,6 @@
     .animate-fade-in { animation: fadeSlideIn 0.3s ease forwards; }
 </style>
 
-{{-- Page Header --}}
 <div class="flex justify-between items-center mb-8 print-hidden">
     <div>
         <h1 class="text-3xl font-black text-gray-800">Kasir & Pembayaran</h1>
@@ -80,10 +79,8 @@
     </div>
 @endif
 
-{{-- TOP GRID: Cari Invoice + Info Tagihan + Kalkulator --}}
 <div class="grid grid-cols-1 xl:grid-cols-5 gap-6 mb-12 print-hidden">
 
-    {{-- Kolom Kiri: Pencarian + Detail --}}
     <div class="xl:col-span-3 card">
         <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
             <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center">
@@ -95,7 +92,6 @@
             </div>
         </div>
 
-        {{-- Search Bar --}}
         <div class="mb-6">
             <label class="form-label">ID Transaksi / Invoice</label>
             <div class="flex gap-3">
@@ -108,10 +104,8 @@
             </div>
         </div>
 
-        {{-- Result: Detail Tagihan --}}
         <div id="form_pembayaran" class="hidden animate-fade-in">
 
-            {{-- Info Pelanggan & Layanan --}}
             <div class="grid grid-cols-2 gap-4 mb-5">
                 <div class="bg-blue-50 rounded-2xl p-4">
                     <span class="block text-[9px] font-black uppercase tracking-widest text-blue-400 mb-1">Pelanggan</span>
@@ -123,7 +117,6 @@
                 </div>
             </div>
 
-            {{-- Total Tagihan Banner --}}
             <div class="rounded-2xl p-6 mb-5 flex justify-between items-center shadow-lg"
                 style="background: linear-gradient(135deg, #03045E 0%, #0077B6 100%);">
                 <div>
@@ -136,7 +129,6 @@
                 </button>
             </div>
 
-            {{-- Action Buttons --}}
             <div class="flex gap-3">
                 <button onclick="cetakKwitansiHalaman()"
                     class="flex-1 py-3.5 border-2 border-gray-200 rounded-2xl text-xs font-black text-gray-600 hover:bg-gray-50 transition flex items-center justify-center gap-2">
@@ -153,7 +145,6 @@
             </div>
         </div>
 
-        {{-- Not Found Alert --}}
         <div id="alert_invoice_not_found"
             class="hidden p-4 mt-4 bg-red-50 border border-red-200 text-xs font-bold text-red-700 rounded-2xl flex items-center gap-3">
             <i class="bi bi-exclamation-circle-fill text-red-400 text-lg"></i>
@@ -161,7 +152,6 @@
         </div>
     </div>
 
-    {{-- Kolom Kanan: Kalkulator Kembalian --}}
     <div class="xl:col-span-2 card flex flex-col">
         <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
             <div class="w-9 h-9 rounded-xl bg-yellow-50 flex items-center justify-center">
@@ -180,7 +170,6 @@
                 class="form-input text-lg font-black">
         </div>
 
-        {{-- Kembalian Box --}}
         <div class="rounded-2xl p-6 text-center shadow-md mb-5 flex-1 flex flex-col items-center justify-center"
             style="background: linear-gradient(135deg, #FFD166 0%, #FB8500 100%);">
             <span class="block text-[9px] uppercase font-black text-gray-800 tracking-widest mb-1">Kembalian</span>
@@ -260,7 +249,6 @@
     </div>
 </div>
 
-{{-- Print Area (Kwitansi) --}}
 <div id="print_area" class="hidden p-10 bg-white max-w-2xl mx-auto rounded-3xl relative overflow-hidden font-sans border-2 border-gray-100 shadow-sm">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.04]">
         <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" fill="currentColor" viewBox="0 0 16 16">
@@ -377,7 +365,6 @@
                     document.getElementById('form_pembayaran').classList.remove('hidden');
                     document.getElementById('alert_invoice_not_found').classList.add('hidden');
 
-                    // Reset kembalian saat invoice baru dicari
                     document.getElementById('kembalian_display').textContent = 'Rp 0';
                     document.getElementById('jumlah_uang').value = '';
                 } else {

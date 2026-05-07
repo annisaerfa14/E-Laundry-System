@@ -35,7 +35,6 @@
     .table-td { padding: 1rem 1.5rem; font-size: 0.875rem; }
 </style>
 
-{{-- Header --}}
 <div class="flex justify-between items-center mb-8">
     <div>
         <h1 class="text-3xl font-black text-gray-800">Manajemen Pelanggan</h1>
@@ -54,7 +53,6 @@
     </div>
 @endif
 
-{{-- Stat Cards --}}
 <div class="grid grid-cols-3 gap-4 mb-6">
     <div class="rounded-2xl border border-blue-100 shadow-sm p-5 flex items-center gap-4" style="background:#C7E7FF;">
         <div class="w-12 h-12 rounded-2xl bg-white/60 flex items-center justify-center shrink-0">
@@ -85,7 +83,6 @@
         </div>
 </div>
 
-{{-- Tabel --}}
 <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden mb-6">
     <div class="px-6 py-5 border-b border-gray-100 flex items-center gap-3">
         <div class="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center">
@@ -161,7 +158,6 @@
     </table>
 </div>
 
-{{-- Modal Tambah --}}
 <div id="modalTambah" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center hidden z-50">
     <div class="bg-white p-8 rounded-3xl shadow-2xl w-[440px] border border-gray-100">
         <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">

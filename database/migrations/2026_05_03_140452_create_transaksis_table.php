@@ -13,7 +13,6 @@ public function up(): void
 {
     Schema::create('transaksis', function (Blueprint $table) {
         $table->id();
-        // Menghubungkan ke tabel pelanggans dan pakets
         $table->foreignId('pelanggan_id')->constrained('pelanggans')->onDelete('cascade');
         $table->foreignId('paket_id')->constrained('pakets')->onDelete('cascade');
 

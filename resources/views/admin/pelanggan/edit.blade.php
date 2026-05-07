@@ -34,7 +34,6 @@
 </style>
 
 <div class="max-w-2xl">
-    {{-- Header --}}
     <div class="flex items-center gap-4 mb-8">
         <a href="{{ route('pelanggan.index') }}"
             class="w-10 h-10 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center hover:bg-gray-50 transition">
@@ -46,10 +45,7 @@
         </div>
     </div>
 
-    {{-- Card --}}
     <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
-
-        {{-- Card Header --}}
         <div class="px-8 py-5 border-b border-gray-100 flex items-center gap-4"
             style="background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);">
             <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl font-black shadow-md">
@@ -61,7 +57,6 @@
             </div>
         </div>
 
-        {{-- Form --}}
         <div class="p-8">
             <form action="{{ route('pelanggan.update', $pelanggan->id) }}" method="POST">
                 @csrf

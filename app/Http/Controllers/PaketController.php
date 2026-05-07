@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class PaketController extends Controller
 {
-    // Tampilkan Data
     public function index()
     {
         $pakets = Paket::all();
@@ -15,7 +14,6 @@ class PaketController extends Controller
         return view('admin.paket.index', compact('pakets', 'totalPaket'));
     }
 
-    //Simpan Data Baru
     public function store(Request $request)
     {
         $request->validate([
@@ -27,7 +25,6 @@ class PaketController extends Controller
         return redirect()->back()->with('success', 'Paket layanan berhasil ditambah!');
     }
 
-    // Update Data
     public function update(Request $request, $id)
     {
         $paket = Paket::findOrFail($id);
@@ -35,7 +32,6 @@ class PaketController extends Controller
         return redirect()->back()->with('success', 'Paket layanan berhasil diperbarui!');
     }
 
-    // Hapus Data
     public function destroy($id)
     {
         $paket = Paket::findOrFail($id);

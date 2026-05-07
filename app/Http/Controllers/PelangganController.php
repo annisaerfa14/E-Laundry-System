@@ -32,14 +32,12 @@ class PelangganController extends Controller
         
     }
 
-    // Fungsi untuk menampilkan halaman edit
     public function edit($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
         return view('admin.pelanggan.edit', compact('pelanggan'));
     }
 
-    // Fungsi untuk Proses Edit
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -54,7 +52,6 @@ class PelangganController extends Controller
         return redirect()->route('pelanggan.index')->with('success', 'Data pelanggan berhasil diperbarui!');
     }
 
-    // Fungsi untuk Proses Hapus
     public function destroy($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);

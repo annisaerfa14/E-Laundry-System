@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('pesan');
-            $table->string('tipe'); // 'transaksi', 'pembayaran', 'pelanggan', 'paket'
+            $table->string('tipe'); 
             $table->boolean('sudah_dibaca')->default(false);
             $table->timestamps();
         });

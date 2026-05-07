@@ -122,7 +122,6 @@
     }
 </style>
 
-{{-- Page Header --}}
 <div class="flex justify-between items-center mb-8">
     <div>
         <h1 class="text-3xl font-black text-gray-800">Cucian Masuk</h1>
@@ -141,10 +140,8 @@
     </div>
 @endif
 
-{{-- Main Grid: Form + Nota --}}
 <div class="grid grid-cols-1 xl:grid-cols-5 gap-6 mb-12">
 
-    {{-- FORM CARD --}}
     <div class="xl:col-span-3 card">
         <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
             <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center">
@@ -159,7 +156,6 @@
         <form action="{{ route('transaksi.store') }}" method="POST">
             @csrf
 
-            {{-- Pelanggan --}}
             <div class="mb-5">
                 <label class="form-label">Pilih Pelanggan</label>
                 <select name="pelanggan_id" onchange="hitungTotal()" class="form-input" required>
@@ -170,7 +166,6 @@
                 </select>
             </div>
 
-            {{-- Paket --}}
             <div class="mb-5">
                 <label class="form-label">Pilih Paket Layanan</label>
                 <select name="paket_id" onchange="hitungTotal()" class="form-input" required>
@@ -183,7 +178,6 @@
                 </select>
             </div>
 
-            {{-- Berat + Tanggal + Total --}}
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 items-end">
                 <div>
                     <label class="form-label">Berat (Kg)</label>
@@ -201,10 +195,8 @@
                 </div>
             </div>
 
-            {{-- Divider --}}
             <div class="border-t border-gray-100 mb-6"></div>
 
-            {{-- Buttons --}}
             <button type="submit" class="btn-primary">
                 <i class="bi bi-printer-fill"></i> Simpan & Cetak Nota
             </button>
@@ -214,10 +206,8 @@
         </form>
     </div>
 
-    {{-- NOTA PREVIEW CARD --}}
     <div class="xl:col-span-2 card flex flex-col" style="background: linear-gradient(145deg, #fff 80%, #f0f7ff 100%);">
 
-        {{-- Nota Header --}}
         <div class="flex justify-between items-start mb-5 pb-4 border-b border-dashed border-gray-200">
             <div>
                 <p class="font-black text-[#006994] text-sm tracking-wide flex items-center gap-1.5">
@@ -231,7 +221,6 @@
             </div>
         </div>
 
-        {{-- Nota Body --}}
         <div class="flex-1 space-y-4">
             <div class="bg-gray-50 rounded-2xl p-4">
                 <p class="nota-label">Pelanggan</p>
@@ -253,13 +242,11 @@
                 </div>
             </div>
 
-            {{-- Total --}}
             <div class="flex justify-between items-center border-t-2 border-dashed border-gray-200 pt-4">
                 <span class="font-black text-gray-700 text-sm">Total Tagihan</span>
                 <span class="text-2xl font-black text-[#006994]" id="preview_total">Rp 0</span>
             </div>
 
-            {{-- Status badges --}}
             <div class="flex flex-col gap-2 pt-1">
                 <div class="badge badge-red w-full justify-center py-2">
                     <i class="bi bi-exclamation-circle-fill"></i> Status Pembayaran: Belum Lunas
@@ -276,7 +263,6 @@
     </div>
 </div>
 
-{{-- Riwayat Transaksi --}}
 <div class="mb-4 flex justify-between items-center">
     <div>
         <h2 class="text-xl font-black text-gray-800">Riwayat Transaksi</h2>
